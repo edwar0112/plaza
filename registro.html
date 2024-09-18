@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plaza Digital - Registro</title>
+    <link rel="stylesheet" href="pagina.css">
+    <script>
+        function registrarUsuario() {
+            // Obtener los valores de los campos
+            var nombre = document.getElementById('nombre').value;
+            var apellido = document.getElementById('apellido').value;
+            var direccion = document.getElementById('direccion').value;
+            var telefono = document.getElementById('telefono').value;
+            var sexo = document.getElementById('sexo').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Guardar los datos en LocalStorage
+            localStorage.setItem('nombre', nombre);
+            localStorage.setItem('apellido', apellido);
+            localStorage.setItem('direccion', direccion);
+            localStorage.setItem('telefono', telefono);
+            localStorage.setItem('sexo', sexo);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);
+
+            // Redirigir a la página de inicio de sesión
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>Registro de Usuario</h1>
+            <form onsubmit="registrarUsuario(); return false;">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" required>
+
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="sexo">Sexo</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
